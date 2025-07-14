@@ -1,0 +1,1 @@
+export const RecaptchaSiteKey = "recaptcha-site-key-here";
