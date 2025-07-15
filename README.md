@@ -1,1 +1,3 @@
-# DOCS COMING SOON
+### Working Demo: http://shortenit.site/
+
+Docs coming soon.
