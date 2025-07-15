@@ -51,7 +51,7 @@ export default function HomeScreen() {
     return(
         <div className="min-h-dvh w-dvw bg-zinc-900 flex justify-center items-center">
             
-            <div className="w-[95%] max-w-[600px] flex flex-col p-10 gap-10">
+            <div className="w-[95%] max-w-[750px] flex flex-col p-10 gap-10">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="text-5xl font-bold text-white">ShortenIt</h1>
                     <p className="text-xl text-zinc-200">Easy to use URL Shortener</p>
@@ -60,10 +60,10 @@ export default function HomeScreen() {
                 <div>
                     { (error != "") ? <p className="text-red-500 mb-3 text-lg">{error}</p> : <></> }
 
-                    <form onSubmit={submit} className="flex gap-3">
+                    <form onSubmit={submit} className="flex flex-col md:flex-row gap-3">
                         <input value={originalUrl} onChange={e => {
                             setOriginalUrl(e.target.value);
-                        }} className="text-zinc-100 w-full border px-3 h-[45px] text-lg rounded-lg border-zinc-600 flex-1" type="text" placeholder="Enter URL here..." required />
+                        }} className="text-zinc-100 w-full border px-3 h-[45px] text-lg rounded-lg border-zinc-600 md:flex-1" type="text" placeholder="Enter URL here..." required />
 
                         <button className="text-lg text-white bg-teal-500 h-[45px] px-5 rounded-lg cursor-pointer">Shorten It!</button>
                     </form>
