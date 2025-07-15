@@ -1,3 +1,3 @@
-### Working Demo: http://shortenit.site/
+### Working Demo: https://shortenit.site/
 
 Docs coming soon.
