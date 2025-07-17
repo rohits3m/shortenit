@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 type Link struct {
@@ -21,7 +22,7 @@ type Link struct {
 }
 
 type LinkModel struct {
-	Db *pgx.Conn
+	Db *pgxpool.Pool
 }
 
 func (model *LinkModel) GetByLinkId(linkId string) (Link, error) {

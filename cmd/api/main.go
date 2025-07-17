@@ -9,7 +9,7 @@ import (
 	"shortenit/internal/models"
 	"time"
 
-	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/joho/godotenv"
 )
 
@@ -21,7 +21,7 @@ type Config struct {
 }
 
 type Application struct {
-	db     *pgx.Conn
+	db     *pgxpool.Pool
 	logger *slog.Logger
 	config *Config
 
@@ -43,7 +43,7 @@ func main() {
 	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
 
 	// Database Connection with Timeout
-	conn, err := pgx.Connect(context.Background(), config.dbStr)
+	conn, err := pgxpool.New(context.Background(), config.dbStr)
 	if err != nil {
 		logger.Error(err.Error())
 	}
